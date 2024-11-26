@@ -1,7 +1,7 @@
-# Catálogo Musical MVC
+# Catálogo Musical
 
-Um sistema de gerenciamento de discos, artistas e gêneros musicais, 
-arquitetura MVC
+- Um sistema de gerenciamento de discos, artistas e gêneros musicais, 
+- arquitetura MVC
 
 ---
 
