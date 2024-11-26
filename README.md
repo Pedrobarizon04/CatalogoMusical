@@ -7,21 +7,21 @@
 
 ## Funcionalidades do Projeto
 
-- **Gerenciamento de Discos**:
-  - Adicionar, editar e excluir discos.
-  - Associar discos a gêneros musicais.
-  - Listar todos os discos cadastrados, com informações detalhadas (ano de lançamento, capa, faixas e gênero).
-
-- **Gerenciamento de Artistas**:
+- **Artistas**:
   - Adicionar, editar e excluir artistas.
   - Associar artistas a discos existentes.
   - Listar artistas cadastrados, com informações detalhadas (nome, gênero musical, discos associados e foto).
 
-- **Gerenciamento de Gêneros**:
+- **Discos**:
+  - Adicionar, editar e excluir discos.
+  - Associar discos a gêneros musicais.
+  - Listar todos os discos cadastrados, com informações detalhadas (ano de lançamento, capa, faixas e gênero).
+
+- **Gêneros**:
   - Adicionar gêneros musicais.
   - Listar gêneros, exibindo discos e artistas associados.
 
-- **Busca Dinâmica**:
+- **BuscA**:
   - Busca por discos, artistas e gêneros utilizando parâmetros como nome, título ou gênero.
 
 ---
