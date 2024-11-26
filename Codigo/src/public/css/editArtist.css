@@ -1,0 +1,216 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.navbar {
+    width: 250px;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar-title h1 {
+    color: #1db954;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #1db954;
+    background-color: #333333;
+    transform: scale(1.05);
+    text-shadow: 0px 0px 10px #1db954;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #121212;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #1db954;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.edit-form {
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.edit-form label {
+    font-size: 1rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.edit-form button {
+    background-color: #1db954;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #148b3a;
+    transform: scale(1.05);
+}
+
+/* Lista de Discos */
+#discos-list {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+    max-height: 200px; 
+    overflow-y: auto;
+    border: 1px solid #333;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#discos-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; 
+    line-height: 1.5; 
+}
+
+#discos-list li:hover {
+    background-color: #333333;
+}
+
+#discos-list li input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1db954;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#discos-list li input[type="checkbox"]:checked {
+    background-color: #1db954;
+    border-color: #148b3a;
+}
+
+#discos-list li label {
+    margin-left: 10px; 
+    color: white;
+    cursor: pointer;
+}
+
+/* Link Voltar */
+.centered-link {
+    display: flex;
+    justify-content: center;
+}
+
+.back-link {
+    font-size: 1rem;
+    color: #1db954;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #148b3a;
+}

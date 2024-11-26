@@ -1,0 +1,270 @@
+:root {
+  --primary-color: #1db954; /* Verde */
+  --background-color: #121212; /* Fundo escuro */
+  --text-color: #eaeaea; /* Texto claro */
+  --text-muted: #b3b3b3; /* Texto secundário */
+  --navbar-bg: #1c1c1c; /* Fundo da Sidebar */
+  --hover-color: #1ed760; /* Verde claro no hover */
+  --card-bg: #1c1c1c; /* Fundo dos cartões */
+  --input-bg: #2a2a2a; /* Fundo dos inputs */
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar .navbar-title h1 {
+  font-size: 1.8rem; /* Tamanho consistente */
+  font-weight: bold; /* Negrito para destaque */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+  color: #1db954 !important; /* Verde forçado */
+}
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--navbar-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.sidebar-title h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-links li {
+  margin: 15px 0;
+}
+
+.sidebar-links li .link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-links li .link:hover,
+.sidebar-links li .link.active {
+  color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+/* Content Container */
+.content-container {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Botão Principal */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Lista de Artistas */
+.artistas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.artista-item {
+  background-color: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artista-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.artista-item h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.artista-foto {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.artista-item .genero {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.artista-item .discos {
+  background-color: var(--input-bg);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.artista-item .discos strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.artista-item .discos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artista-item .discos ul li {
+  background-color: var(--card-bg);
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* Botões de Ações */
+.btn-edit,
+.btn-delete {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #b40811;
+  transform: translateY(-2px);
+}
+
+.btn-delete-form {
+  display: inline;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px;
+  }
+
+  .content-container {
+      margin-left: 200px;
+      width: calc(100% - 200px);
+  }
+
+  .sidebar-links li .link {
+      font-size: 1rem;
+  }
+
+  .artista-item {
+      width: 90%;
+  }
+}

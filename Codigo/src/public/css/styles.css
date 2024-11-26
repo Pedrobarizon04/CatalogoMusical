@@ -1,0 +1,320 @@
+:root {
+    --primary-color: #1db954; /* Verde principal */
+    --background-color: #121212; /* Fundo escuro */
+    --text-color: #eaeaea; /* Texto claro */
+    --text-muted: #b3b3b3; /* Texto secundário */
+    --navbar-color: #1c1c1c; /* Fundo da Sidebar */
+    --hover-color: #1ed760; /* Verde claro no hover */
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden; /* Esconde o scroll ao carregar */
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 2s ease-in-out forwards; /* Animação de aparecimento */
+}
+
+/* Sidebar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 250px;
+    background-color: var(--navbar-color);
+    color: #fff;
+    position: fixed;
+    left: -250px; /* Começa fora da tela */
+    top: 0;
+    bottom: 0;
+    padding: 20px 0;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    animation: slideInSidebar 1.5s ease-out forwards; /* Entrada lateral */
+    animation-delay: 0.5s; /* Delay para sincronizar com o fade */
+}
+
+/* Logo Container */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar Title */
+.navbar-title h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: block;
+    padding: 10px 0;
+}
+
+.nav-links li a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1) translateX(10px);
+    text-shadow: 0 0 10px var(--hover-color);
+}
+
+.nav-links li a.active {
+    color: var(--primary-color);
+    border-left: 4px solid var(--hover-color);
+    padding-left: 16px;
+}
+
+/* Main Content Container */
+.content-container {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: url('https://www.rockbizz.com.br/wp-content/uploads/2018/03/Capas-Bandas-De-Rock-Metal.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.4) blur(3px); /* Escurece e desfoca a imagem */
+    animation: brightenBackground 1.5s ease-in-out forwards; /* Ajuste de brilho */
+}
+
+.main-content {
+    text-align: center;
+    z-index: 2; /* Coloca o texto acima do fundo animado */
+    color: var(--text-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Começa deslocado para baixo */
+    animation: slideInContent 1.5s ease-out forwards; /* Entrada suave */
+    animation-delay: 1s; /* Delay para sincronizar com o restante */
+}
+
+.welcome-title {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.welcome-title span {
+    color: var(--hover-color);
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.3s ease, filter 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.description:hover {
+    color: var(--text-color);
+    filter: brightness(1.2);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+    backdrop-filter: blur(10px); /* Aplica blur no conteúdo de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-content {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    width: 90%;
+    animation: scaleIn 0.7s ease;
+}
+
+.modal-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInSidebar {
+    from {
+        left: -250px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes brightenBackground {
+    from {
+        filter: brightness(0.2) blur(5px);
+    }
+    to {
+        filter: brightness(0.4) blur(3px);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        width: 200px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .navbar-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .content-container {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .welcome-title {
+        font-size: 3rem;
+    }
+
+    .description {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        width: 150px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .navbar-title h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links li a {
+        font-size: 0.9rem;
+    }
+
+    .content-container {
+        margin-left: 150px;
+        width: calc(100% - 150px);
+    }
+
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+}

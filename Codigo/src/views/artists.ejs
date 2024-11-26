@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Artistas</title>
+  <link rel="stylesheet" href="/css/artists.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <img src="/images/Logo.png" alt="Logo" class="logo">
+      </div>
+      <div class="navbar-title">
+        <h1>Catálogo Musical</h1>
+      </div>
+      <ul class="sidebar-links">
+        <li><a href="/" class="link">Início</a></li>
+        <li><a href="/discs" class="link">Discos</a></li>
+        <li><a href="/artists" class="link active">Artistas</a></li>
+        <li><a href="/genres" class="link">Gêneros</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content-container">
+      <main class="main-content">
+        <h1 class="page-title">Artistas Cadastrados</h1>
+        <a href="/artists/add" class="btn-primary">Cadastrar Novo Artista</a>
+
+        <% if (artistas.length > 0) { %>
+          <div class="artistas-list">
+            <% artistas.forEach(artista => { %>
+              <div class="artista-item">
+                <img src="<%= artista.foto %>" alt="Foto de <%= artista.nome %>" class="artista-foto">
+                
+                <h2><%= artista.nome %></h2>
+                <p class="genero"><strong>Gênero:</strong> <%= artista.genero %></p>
+                
+                <div class="discos">
+                  <strong>Discos:</strong>
+                  <% if (artista.Discos.length > 0) { %>
+                    <ul>
+                      <% artista.Discos.forEach(disco => { %>
+                        <li><%= disco.titulo %> (<%= disco.ano %>)</li>
+                      <% }) %>
+                    </ul>
+                  <% } else { %>
+                    <p>Nenhum disco cadastrado.</p>
+                  <% } %>
+                </div>
+                
+                <div class="artista-actions">
+                  <a href="/artists/edit/<%= artista.id %>" class="btn-edit">Editar</a>
+                  <form action="/artists/delete/<%= artista.id %>" method="POST" class="btn-delete-form">
+                    <button type="submit" class="btn-delete">Excluir</button>
+                  </form>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="no-artistas">Nenhum artista cadastrado.</p>
+        <% } %>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
