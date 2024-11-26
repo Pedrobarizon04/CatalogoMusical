@@ -21,7 +21,7 @@
   - Adicionar gêneros musicais.
   - Listar gêneros, exibindo discos e artistas associados.
 
-- **BuscA**:
+- **Busca**:
   - Busca por discos, artistas e gêneros utilizando parâmetros como nome, título ou gênero.
 
 ---
